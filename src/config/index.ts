@@ -9,7 +9,7 @@ export const SITE_CONFIG: SiteConfig = {
   siteLogo: "/profile-small.jpg",
   navLinks: [
     { text: "Experience", href: "experience-list" },
-    { text: "Projects", href: "#projects" },
+  /*   { text: "Projects", href: "#projects" }, */
     { text: "About", href: "#about" },
   ],
   socialLinks: [
@@ -17,7 +17,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "LinkedIn", href: "https://www.linkedin.com/in/ian-middelkamp/" },
     { text: "Github", href: "https://github.com/ianmiddelkamp" }
   ],
-  socialImage: "/zen-og.png",
+  socialImage: "zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
 };
 
@@ -79,21 +79,21 @@ export const SITE_CONTENT: SiteContent = {
       summary: "A music streaming app that emulates Spotify's core features.",
       linkPreview: "/",
       linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      image: "spotifu.png",
     },
     {
       name: "Shopp App",
       summary: "An e-commerce platform that replicates Shopify's key features.",
       linkPreview: "/",
       linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
+      image: "shopify-clon.png",
     },
     {
       name: "ClonTagram",
       summary: "A social network that replicates the features of Instagram",
       linkPreview: "/",
       linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      image: "clone-ig.png",
     }, */
   ],
   about: {

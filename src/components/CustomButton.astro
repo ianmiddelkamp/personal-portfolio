@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  href: string;
+  backgroundColor?: string;
+  innerText:string
+}
+
+const { href, backgroundColor, innerText } = Astro.props;
+const bgColor = backgroundColor || "bg-pink-500";
+---
+
+<a
+  class={`inline-block rounded-full ${bgColor} px-8 py-5 text-sm leading-5 font-medium text-[#fff] my-2`}
+  href={href}
+>
+  {innerText}
+</a>
