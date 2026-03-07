@@ -8,20 +8,14 @@ import About from "@components/About.astro";
 
 import "../styles/global.css";
 import CaseStudy from "@components/CaseStudy.astro";
+import CustomButton from "@components/CustomButton.astro";
+
 ---
 
 <Layout>
   <Hero {...SITE_CONTENT.hero} />
   <Experience experience={SITE_CONTENT.experience?.slice(0,1)}  />
- 
-      <a
-        class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-        href="/experience-list"
-      >
-        View More
-      </a>
-    )
-
+  <CustomButton href="/experience-list" innerText="View More" />
   <Projects projects={SITE_CONTENT.projects} />
   <CaseStudy />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />

@@ -4,10 +4,11 @@ import { SITE_CONTENT } from "@config";
 import Layout from "@layouts/Layout.astro";
 import "../styles/global.css";
 import Experience from "@components/Experience.astro";
+import CustomButton from "@components/CustomButton.astro";
 
 ---
 <Layout>
 
   <Experience experience={SITE_CONTENT.experience} />
-
+  <CustomButton href="/" innerText="Back to Home" backgroundColor="bg-primary" />
 </Layout>
