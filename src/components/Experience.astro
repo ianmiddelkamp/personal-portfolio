@@ -4,17 +4,15 @@ import type { ExperienceProps } from "@types";
 
 interface Props {
   experience: ExperienceProps[];
-  introPageExperienceMin?: number;
 }
 
-const { experience, introPageExperienceMin  } = Astro.props;
-const minExperiences = introPageExperienceMin ?? experience.length;
+const { experience  } = Astro.props;
+
 ---
 
 <Section text="Work Experience">
   {
-    experience
-      .slice(0, minExperiences)
+    experience     
       .map(({ company, position, startDate, endDate, summary, location }) => (
         <div class="mb-10">
           <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
