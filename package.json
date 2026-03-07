@@ -1,5 +1,5 @@
 {
-  "name": "astro-zen",
+  "name": "portfiolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,7 +14,7 @@
     "@fontsource-variable/gabarito": "^5.1.0",
     "@fontsource/be-vietnam-pro": "^5.1.0",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.17.1",
+    "astro": "^5.18.0",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.6.2"
   },
