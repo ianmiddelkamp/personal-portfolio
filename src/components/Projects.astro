@@ -11,6 +11,12 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Featured Projects" href="projects">
+  <div>
+    <p class="mb-12 text-base text-neutral">
+      I have been working for a single company for 11 years on private projects, so I can't show most of my work here. My personal projects are coming soon...
+    </p>
+  
+  </div>
   {
     projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
       const top = 98 + index * 40;
