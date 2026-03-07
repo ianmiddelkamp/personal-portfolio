@@ -1,23 +1,21 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Ian Middelkamp — Software Engineer",
+  author: "Ian Middelkamp",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Senior Software Engineer | Full-Stack Development, Databases & Production Infrastructure.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/profile-small.jpg",
   navLinks: [
-    { text: "Experience", href: "#experience" },
+    { text: "Experience", href: "experience-list" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "Instagram", href: "https://www.instagram.com/ianmiddelkamp/" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/ian-middelkamp/" },
+    { text: "Github", href: "https://github.com/ianmiddelkamp" }
   ],
   socialImage: "/zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
@@ -25,44 +23,57 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Ian Middelkamp",
+    specialty: "Senior Software Engineer",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Developer based in Toronto, Canada. I specialize in full-stack development, databases, and production infrastructure.",
+    email: "ianmmiddelkamp@gmail.com",
   },
+  introPageExperienceMin: 1, 
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Monster Property Services Inc.",
+      position: "Senior Software Engineer",
+      startDate: "Jun 2014",
+      endDate: "Present",
+      location: "Canada",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Led the design, development, and operation of the company’s core office web application, enabling creation and delivery of seasonal service quotes, management of clients and employees, and facilitation of winter service operations. Integrated multiple external APIs to streamline workflows. Stack: PHP, MySQL, Angular.",
+        "Developed an employee portal web application to manage onboarding, shift tracking, documents and signatures, memos, leaderboards, training videos, and quizzes, improving operational efficiency, and reducing HR involvement. Stack: PHP, MySQL, Angular.",
+        "Built an Android application for plow operators, providing step-by-step job guidance, client service history, and time tracking at each property. Integrated with REST APIs from the office system. Stack: Java, Android.",
+        "Delivered mobile employee portal applications for both Android and iOS, enabling shift management, weather response coordination, and equipment maintenance tracking. Stack: Java (Android), Swift (iOS).",
+        "Oversaw end-to-end production deployment, maintenance, and optimization across multiple cloud servers, ensuring uptime and reliability during high-demand winter periods.",
+        "Introduced structured code reviews and AI-assisted development tools to improve engineering efficiency and code quality."
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "DJRain",
+      position: "Irrigation Systems Technician",
+      startDate: "Aug 2012",
+      endDate: "Jun 2014",
+      location: "Greater Toronto Area, Canada",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Installed, serviced and repaired sprinkler systems for residential, multi-unit residential, commercial, industrial properties, and athletic fields.",
+        "Diagnosed and repaired issues with wiring systems for sprinkler valves and programmed and repaired automated system controllers.",
+        "Daily customer service component."
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+      company: "Canrain Lawn Sprinklers",
+      position: "Lead Foreman and Irrigation Systems Technician",
+      startDate: "Apr 2006",
+      endDate: "Aug 2012",
+      location: "London, Canada Metropolitan Area",
+      summary: [
+        "Design and provide quotes for sprinkler systems. Manage a team of employees to deliver a finished product on schedule.",
+        "Installed, serviced and repaired sprinkler systems for residential, multi-unit residential, commercial, industrial properties, and athletic fields.",
+        "Diagnosed and repaired issues with complicated wiring systems for sprinkler valves and programmed, repaired automated system controllers.",
+        "Daily customer service component."
+      ],
     },
   ],
   projects: [
+    /*
     {
       name: "Spotifu Music",
       summary: "A music streaming app that emulates Spotify's core features.",
@@ -83,16 +94,16 @@ export const SITE_CONTENT: SiteContent = {
       linkPreview: "/",
       linkSource: "https://github.com/immois/astro-zen",
       image: "/clone-ig.png",
-    },
+    }, */
   ],
   about: {
-    description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+    description: `I’m a senior backend and full-stack engineer with 10+ years of experience building and scaling revenue-critical systems in a growing business environment.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
-    `,
-    image: "/alejandro-big.jpg",
+For much of my career, I’ve led and operated the software function within a small but rapidly expanding company — owning everything from architecture and data modeling to production infrastructure and deployment. As the company scaled from under $2.5M to $9M in revenue, I supported 200+ active users, expanded systems into new service lines, and helped double seasonal contract volume.
+
+I’ve worked across PHP, Node.js, Angular, and Android, with deep responsibility for application architecture, database design, and production operations. My experience includes managing and optimizing a multi-database MySQL environment (3GB+ primary database), designing schema evolution strategies, improving query performance, and maintaining uptime across multiple Amazon Lightsail instances.
+
+In recent years, I’ve introduced structured code reviews, adopted AI-assisted development tools to improve engineering efficiency, contributed to hiring processes, Github actions, unit tests with PHPUnit, and mentored junior developers — while continuing to focus primarily on hands-on engineering.`,
+    image: "/profile-big.jpg",
   },
 };
-
-// #5755ff
