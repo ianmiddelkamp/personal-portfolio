@@ -1,0 +1,11 @@
+---
+interface Props {
+  blurb: string;
+}
+const { blurb } = Astro.props;
+---
+
+<section class="my-12 max-w-2xl mx-auto text-center">
+  <h2 class="text-2xl font-bold mb-2 text-primary">About Me</h2>
+  <p class="text-base text-neutral mb-2">{blurb}</p>
+</section>
