@@ -41,7 +41,7 @@ const data = Astro.props;
                         <div class="flex flex-row flex-wrap justify-center gap-12">
                             {images.map((image, index) => (
                                 <div
-                                    class={`thumbnail flex-shrink-0 bg-white flex-shrink-1 p-1`}
+                                    class={`thumbnail flex-shrink-0 bg-white flex-shrink-1 p-1 flex flex-row items-center`}
                                     data-fullsrc={image.src}
                                     data-alt={image.name}
                                 >
@@ -63,7 +63,7 @@ const data = Astro.props;
     <!-- Overlay Structure -->
     <div id="overlay">
         <div class="overlay-container bg-white p-1">
-            <img width="1924" height="1279" alt="Enlarged view" />
+            <img class='max-w-[90vw] sm:max-w-[90vw] md:max-w-[90vw]' alt="Enlarged view" />
         </div>
     </div>
 </Section>
@@ -101,7 +101,7 @@ const data = Astro.props;
                 image.onload = () => {
                     overlayImg.setAttribute("src", imgSrc);
                     overlayImg.setAttribute("alt", imgAlt || "Enlarged image");
-                    overlay.style.display = "block";
+                    overlay.style.display = "flex";
                     overlay.removeAttribute("data-loading");
                 };
                 image.onerror = () => {
@@ -118,6 +118,9 @@ const data = Astro.props;
     #overlay {
         display: none; /* Hidden by default */
         position: fixed;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         top: 0;
         left: 0;
         width: 100%;
@@ -131,7 +134,8 @@ const data = Astro.props;
     .overlay-container {
         position: fixed;
         top: 50%;
-        left: 50%;
+        left: 50%; 
+        flex-shrink: 1;
         transform: translate(-50%, -50%);
     }
 </style>
