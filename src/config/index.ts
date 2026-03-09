@@ -10,8 +10,8 @@ export const SITE_CONFIG: SiteConfig = {
      siteLogo: "/profile-small.jpg",
      navLinks: [
           { text: "Experience", href: "experience-list" },
-          /*   { text: "Projects", href: "#projects" }, */
-          { text: "About", href: "#about" },
+          { text: "Case Studies", href: "/case-studies" },
+          { text: "About Me", href: "/about" },
      ],
      socialLinks: [
           { text: "Instagram", href: "https://www.instagram.com/ianmiddelkamp/" },

@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import Layout from "./Layout.astro";
+const { title, summary, company, date, tech } = Astro.props;
+---
+
+<Layout>
+    <article class="case-study prose prose-lg mx-auto max-w-4xl p-6 bg-white rounded-lg shadow-md">
+        <!-- Case Study Title -->
+        <header>
+            <h1>{title}</h1>
+            {
+                summary && (
+                    <blockquote class="border-l-4 border-neutral pl-4  italic">
+                        {summary}
+                    </blockquote>
+                )
+            }
+            {
+                tech && tech.length > 0 && (
+                    <p class="text-sm text-neutral">
+                        Tech used: {tech.join(", ")}
+                    </p>
+                )
+            }
+            {date && <p class="text-sm text-neutral">Year: {date}</p>}
+        </header>
+
+        <hr class="my-6" />
+
+        <!-- Main content slot -->
+        <section>
+            <slot />
+        </section>
+
+        <hr class="my-6" />
+
+        <!-- Optional footer / lessons learned -->
+        <footer class="mt-6 text-sm text-gray-700">
+            <p>Case study authored by Ian Middelkamp</p>
+        </footer>
+    </article>
+</Layout>
+<style>
+    /* optional Tailwind classes for styling, if using Tailwind */
+</style>
