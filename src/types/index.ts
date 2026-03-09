@@ -7,13 +7,30 @@ export interface SiteConfig extends HeaderProps {
   socialImage: string;
   canonicalURL?: string;
 }
-
+export interface AboutSectionImage {
+  src: string;
+  thumbSrc?: string;
+  name: string;
+  width: number,
+  height: number
+}
+export interface AcountSection {
+  title: string;
+  description: string;
+  images: AboutSectionImage[];
+}
+export interface AboutPageProps {
+  intro: string;
+  mainImage: AboutSectionImage;
+  sections: AcountSection[]
+}
 export interface SiteContent {
   hero: HeroProps;
   experience: ExperienceProps[];
   introPageExperienceMin: number;
   projects: ProjectProps[];
   about: AboutProps;
+  aboutPage: AboutPageProps
 }
 
 export interface HeroProps {
