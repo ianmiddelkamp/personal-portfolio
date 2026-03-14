@@ -46,6 +46,8 @@ const { title, summary, company, date, tech } = Astro.props;
 
 <script type="module">
     import panzoom from "https://cdn.skypack.dev/@panzoom/panzoom";
-    const element = document.querySelector(".zoomable-diagram > pre"); // Mermaid SVG container
-    if (element) panzoom(element, { maxScale: 3, minScale: 0.5 });
+    const elements = document.querySelectorAll(".zoomable-diagram > pre"); // Mermaid SVG container
+    elements.forEach((element) => {
+        if (element) panzoom(element, { maxScale: 3, minScale: 0.5 });
+    });
 </script>

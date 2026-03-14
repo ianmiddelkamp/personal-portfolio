@@ -9,7 +9,7 @@ export const SITE_CONFIG: SiteConfig = {
      lang: "en",
      siteLogo: "/profile-small.jpg",
      navLinks: [
-          { text: "Experience", href: "experience-list" },
+          { text: "Experience", href: "/experience-list" },
           { text: "Case Studies", href: "/case-studies" },
           { text: "About Me", href: "/about" },
      ],

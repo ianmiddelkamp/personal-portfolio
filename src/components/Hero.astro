@@ -20,5 +20,5 @@ const { name, specialty, summary, email } = Astro.props;
   <p class="mb-16 text-base font-normal text-neutral md:text-lg">
     {summary}
   </p>
-  <CustomButton href="{`mailto:${email}`}" innerText="Get in Touch" />
+  <CustomButton href={`mailto:${email}`} innerText="Get in Touch" />
 </section>
