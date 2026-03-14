@@ -36,7 +36,7 @@ export const SITE_CONTENT: SiteContent = {
                company: "Monster Property Services Inc.",
                position: "Senior Software Engineer",
                startDate: "Jun 2014",
-               endDate: "Present",
+               endDate: "Mar 2026",
                location: "Canada",
                summary: [
                     "Led the design, development, and operation of the company’s core office web application, enabling creation and delivery of seasonal service quotes, management of clients and employees, and facilitation of winter service operations. Integrated multiple external APIs to streamline workflows. Stack: PHP, MySQL, Angular.",
