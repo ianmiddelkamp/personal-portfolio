@@ -1,17 +1,21 @@
 ---
 import "../styles/global.css";
 import Layout from "./Layout.astro";
+import ImagePreviewer from "../components/ImagePreviewer.astro";
+
 const { title, summary, company, date, tech } = Astro.props;
 ---
 
 <Layout>
-    <article class="case-study prose prose-lg mx-auto max-w-4xl p-6 bg-white rounded-lg shadow-md">
+    <article
+        class="case-study mx-auto max-w-4xl rounded-lg bg-white p-6 shadow-md"
+    >
         <!-- Case Study Title -->
         <header>
             <h1>{title}</h1>
             {
                 summary && (
-                    <blockquote class="border-l-4 border-neutral pl-4  italic">
+                    <blockquote class="border-l-4 border-neutral pl-4 italic">
                         {summary}
                     </blockquote>
                 )
@@ -28,19 +32,20 @@ const { title, summary, company, date, tech } = Astro.props;
 
         <hr class="my-6" />
 
-        <!-- Main content slot -->
-        <section>
+        <section class="prose prose-lg">
             <slot />
         </section>
 
         <hr class="my-6" />
 
-        <!-- Optional footer / lessons learned -->
         <footer class="mt-6 text-sm text-gray-700">
             <p>Case study authored by Ian Middelkamp</p>
         </footer>
     </article>
 </Layout>
-<style>
-    /* optional Tailwind classes for styling, if using Tailwind */
-</style>
+
+<script type="module">
+    import panzoom from "https://cdn.skypack.dev/@panzoom/panzoom";
+    const element = document.querySelector(".zoomable-diagram > pre"); // Mermaid SVG container
+    if (element) panzoom(element, { maxScale: 3, minScale: 0.5 });
+</script>

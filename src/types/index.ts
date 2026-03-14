@@ -7,7 +7,7 @@ export interface SiteConfig extends HeaderProps {
   socialImage: string;
   canonicalURL?: string;
 }
-export interface AboutSectionImage {
+export interface PreviewerImage {
   src: string;
   thumbSrc?: string;
   name: string;
@@ -17,11 +17,11 @@ export interface AboutSectionImage {
 export interface AcountSection {
   title: string;
   description: string;
-  images: AboutSectionImage[];
+  images: PreviewerImage[];
 }
 export interface AboutPageProps {
   intro: string;
-  mainImage: AboutSectionImage;
+  mainImage: PreviewerImage;
   sections: AcountSection[]
 }
 export interface SiteContent {
