@@ -7,7 +7,6 @@ import Projects from "@components/Projects.astro";
 import About from "@components/About.astro";
 
 import "../styles/global.css";
-import CaseStudy from "@components/CaseStudy.astro";
 import CustomButton from "@components/CustomButton.astro";
 
 ---
@@ -17,7 +16,6 @@ import CustomButton from "@components/CustomButton.astro";
   <Experience experience={SITE_CONTENT.experience?.slice(0,1)}  />
   <CustomButton href="/experience-list" innerText="View More" />
   <Projects projects={SITE_CONTENT.projects} />
-  <CaseStudy />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
-  <CustomButton href="/about" innerText="More About Me" backgroundColor="bg-primary" />
+  <CustomButton href="/about" innerText="More About Me"/>
 </Layout>

@@ -2,6 +2,7 @@
 import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
+import CustomButton from "./CustomButton.astro";
 
 interface Props {
   projects: ProjectProps[];
@@ -13,9 +14,9 @@ const { projects } = Astro.props;
 <Section text="Featured Projects">
   <div>
     <p class="mb-12 text-base text-neutral">
-      I have been working for a single company for 11 years on private projects, so I can't show most of my work here. My personal projects are coming soon...
+      I have been working for a single company (Monster Property Services Inc.) for 11+ years on private projects and I am unable to show my code. However here are some case studies that I have prepared based on my work at the company.
     </p>
-  
+    <CustomButton href="/case-studies" innerText="View Case Studies" />
   </div>
   {
     projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {

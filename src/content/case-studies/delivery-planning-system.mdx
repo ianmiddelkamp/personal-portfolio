@@ -1,0 +1,258 @@
+---
+title: Building a Cross-Platform Map-Based Delivery Planning System
+summary: A system used by office staff, clients, and field operators to coordinate seasonal delivery of products using a shared coordinate system.
+company: Monster Property Services
+date: 2000
+tech: [PHP, MySQL, Angular, Node, Java, Android]
+---
+import ImagePreviewer from '../../components/ImagePreviewer.astro';
+
+> **Impact**
+>
+> • Coordinated delivery planning between office staff, customers, and field operators  
+> • Reduced ambiguity in product placement using map-based instructions  
+> • Improved visibility into delivery completion  
+
+---
+
+**Context**
+
+At the start of each winter season, Monster Plowing coordinates a massive single-day effort to deliver salt buckets and bins to hundreds of clients across the GTA. For many employees, this is their first day in the field. Key challenges:
+
+- Employees may be unfamiliar with the properties they visit.
+- Misplaced bins require costly second visits (each bin weighs 400+ lbs).
+- Locked gates or other blockers can prevent delivery.
+- All bin deliveries are part of rental agreements; unrecovered bins are a financial loss.
+---
+
+**Problem**
+
+As the company continues to grow each season, managing the specific placement of 400lbs bins of salt at an increasing number of client properties becomes cumbersome and time consuming. 
+
+- Writing placement instructions in text fields alone is inefficient and not effective at communcating placement. 
+- There was no communication layer where customers could confirm intended placement
+- When the bins need to be picked up at the end of the season, the pickup location needs to be known.
+- If a bin was moved on site mid-season, the new location was not synced with original placement data.
+- Delivery outcomes were difficult to track
+- Requiring direct client intervention at the time of delivery was impossible under the single day time constraint.
+- Client's specific request from previous season were forgotten/lossed.
+- Placement-focused ordering is a unique business requirement.
+
+---
+
+**Constraints**
+
+The solution needed to support three different user types:
+
+- **Office staff** planning deliveries
+- **Clients** reviewing delivery placement
+- **Field operators** completing deliveries
+
+Additional requirements:
+
+- Support both **web interfaces** and an **Android mobile app**
+- **Client changes** to placement or notes must be reviewed by office staff (clients cannot alter original data)
+- **Placement history** must be preserved across multiple seasons for recurring contracts
+- Some clients **own their own bins**; the system must track these separately and exclude them from pickup events
+---
+
+**Solution**
+
+I designed a **cross-platform delivery planning system** centered on **map-based placement** of products.
+
+Key features:
+
+- **Office staff** can place delivery markers directly on a site map for each bin
+- **Coordinates and notes** are stored with the delivery order and shared across all systems
+- **Clients** receive notifications with a link to their portal to:
+  - Adjust placement or add notes
+  - Waive (cancel) delivery
+  - Order additional bins
+- **Operators** can view each item’s placement and mark it as delivered or not
+- **Mid-season adjustments**:
+  - Clients can request additional bins, re-locations, or refills
+  - Office users can review and approve requests
+- **Multi-season contracts**:
+  - When creating deliveries for returning clients, office users can view last year’s bin locations and notes
+---
+
+**System Architecture**
+
+
+<div class="zoomable-diagram" style="width:100%; overflow:hidden; border:1px solid #ddd;">
+
+```mermaid
+
+flowchart TD
+
+A[Office Planning Tool<br>Angular Web App]
+B[Backend Application<br>PHP Services]
+C[(MySQL Database)]
+
+D[Client Portal]
+E[Android Delivery App]
+F[REST API Layer]
+
+A --> B
+B --> C
+
+D --> F
+E --> F
+F --> C
+
+```
+</div>
+
+**Delivery Workflow**
+
+
+<div class="zoomable-diagram" style="width:100%; overflow:hidden; border:1px solid #ddd;">
+```mermaid
+flowchart TD
+
+
+subgraph PreSeason["Pre-Season Planning & Delivery"]
+    subgraph Office1["Office"]
+        A[Allocate bin deliveries during contract signing]
+        D[Review client placement changes]
+    end
+
+    subgraph Client1["Client"]
+        B[Receive delivery review email]
+        C[Adjust bin location or add notes]
+    end
+
+    subgraph Operator1["Operator"]
+        E[Delivery day: view placement map<br>Mark bin as delivered]
+    end
+end
+
+subgraph MidSeason["Mid-Season Adjustments"]
+    subgraph Client2["Client"]
+        F[Create bin relocation request]
+    end
+
+    subgraph Office2["Office"]
+        G[Review relocation request<br>Create move job]
+    end
+
+    subgraph Operator2["Operator"]
+        H[Move bin to new location<br>Mark as moved]
+    end
+end
+
+subgraph EndSeason["End-of-Season Pickup"]
+    subgraph Office3["Office"]
+        I[Create pickup orders]
+    end
+
+    subgraph Operator3["Operator"]
+        J[Pickup day: view bin location<br>Mark bin as picked up]
+    end
+end
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
+H --> I
+I --> J
+
+classDef outline fill:none,stroke:#333,stroke-width:1px;
+class PreSeason,MidSeason,EndSeason outline;
+
+```
+</div>
+
+
+---
+
+**Office Order Tool**
+
+When a snow removal contract is signed, part of the signing process involves approval of the scope of work site map included in the quote package. During the signing finalization process, office staff build the initial ice melter bin/bucket order included with their contract agreement. The order tool allows them to place each bin/bucket on a specific location on the existing site map. Placing the icons on the map saves assigns simple coordinates (in percentages of image width/height). Once the order is created, the items are marked as pending.
+
+The office user can view previous seasons locations and notes of all delivered items if, for example, the  contract is a renewal from a previous season.
+
+<div class='flex justify-center align-center'>
+    <div>
+        <ImagePreviewer image={{src:'/assets/office_order.jpg', thumbSrc:'/assets/office_order.jpg', name:'office order page', width:400, height:400 }} />
+        <small>addresses names redacted</small>
+    </div>
+</div>
+
+
+---
+
+**Client Portal Order Tool**
+
+On the client portal order page, clients can 
+
+- change the placement location of the pending order item
+- change notes regarding each item
+- order additional items
+- waive (delete) delivery
+
+Any changes requested are saved to a copy of the order for office review.
+
+<div class='flex justify-center align-center'>
+    <div>
+        <ImagePreviewer image={{src:'/assets/client_one.jpg', thumbSrc:'/assets/client_one.jpg', name:'client order page', width:400, height:400 }} />
+        <small>addresses names redacted</small>
+    </div>
+</div>
+
+---
+
+
+---
+
+**Office Review**
+
+Office can accept/cancel pending changes.
+
+
+<div class='flex justify-center align-center'>
+    <div>
+        <ImagePreviewer image={{src:'/assets/office_two.jpg', thumbSrc:'/assets/office_two.jpg', name:'office reviewing changes', width:400, height:400 }} />
+        <small>addresses names redacted</small>
+    </div>
+</div>
+
+
+---
+
+
+**Mobile Field Execution**
+
+Within the operator android application, user can
+
+- view planned bin locations on the interactive site map tool
+- confirm successful delivery
+- make comments on the site map about delivery blockers, or use internal chat to notify dispatch.
+
+
+<div class='flex justify-center align-center'>
+    <div>
+        <ImagePreviewer image={{src:'/assets/tablet_one.jpg', thumbSrc:'/assets/tablet_one.jpg', name:'tablet site map tool', width:400, height:400 }} />
+        <small>addresses names redacted</small>
+    </div>
+</div>
+
+
+---
+
+**Impact**
+
+The system created a shared understanding of delivery instructions across all stakeholders.
+
+Benefits included:
+
+- clearer placement instructions for operators
+- improved customer communication
+- consistent delivery tracking
+- dramatically reduced return visits
+
+---
