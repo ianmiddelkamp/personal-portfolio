@@ -7,7 +7,7 @@ tech: [PHP, MySQL, Angular, Node, Java, Android]
 ---
 import ImagePreviewer from '../../components/ImagePreviewer.astro';
 
-**Context**
+## Context
 
 At the start of each winter season, Monster Plowing coordinates a massive single-day effort to deliver salt buckets and bins to hundreds of clients across the GTA. Key challenges:
 
@@ -21,7 +21,7 @@ At the start of each winter season, Monster Plowing coordinates a massive single
 - All bin deliveries are part of rental agreements; unrecovered bins are a financial loss.
 ---
 
-**Problem**
+## Problem
 
 As the company continued to grow each season, managing the specific placement of 400lbs bins of salt at an increasing number of client properties become cumbersome and time consuming. 
 
@@ -35,7 +35,7 @@ As the company continued to grow each season, managing the specific placement of
 
 ---
 
-**Constraints**
+## Constraints 
 
 The solution needed to support three different user types:
 
@@ -51,7 +51,7 @@ Additional requirements:
 - Some clients **own their own bins**; the system must track these separately, make them available for refill orders, but exclude them from pickup events
 ---
 
-**Solution**
+## Solution
 
 I designed a **cross-platform delivery planning system** centered on **map-based placement** of products.
 
@@ -72,7 +72,7 @@ Key features:
   - When creating deliveries for returning clients, office users can view last year’s bin locations and notes
 ---
 
-**System Architecture**
+## System Architecture
 
 
 <div class="zoomable-diagram" style="width:100%; overflow:hidden; border:1px solid #ddd;">
@@ -99,7 +99,7 @@ F --> C
 ```
 </div>
 
-**Delivery Workflow**
+## Delivery Workflow
 
 
 <div class="zoomable-diagram" style="width:100%; overflow:hidden; border:1px solid #ddd;">
@@ -166,8 +166,8 @@ class PreSeason,MidSeason,EndSeason outline;
 
 ---
 
-**Office Order Tool**
-## Order Creation:
+## Office Order Tool
+### Order Creation:
 - When a snow removal contract is signed, the quoted scope of work site map is integrated into the sytem. 
 - During signing finalization, office staff build the initial ice melter bin/bucket order included with the contract agreement. 
 - The order tool allows them to place each bin/bucket on a specific location on the existing site map. 
@@ -185,9 +185,9 @@ class PreSeason,MidSeason,EndSeason outline;
 
 ---
 
-**Client Portal Order Tool**
+## Client Portal Order Tool
 
-## Order Review:
+### Order Review:
 On the client portal order page, clients can: 
 
 - change the placement location of the pending order item
@@ -210,7 +210,7 @@ Any changes requested are saved to a copy of the order for office review.
 
 ---
 
-**Office Review**
+### Office Review
 
 Office can accept/cancel pending changes.
 
@@ -226,9 +226,9 @@ Office can accept/cancel pending changes.
 ---
 
 
-**Mobile Service App**
+## Mobile Service App
 
-## Delivery Day:
+### Delivery Day:
 
 Within the operator android application, user can
 
@@ -251,7 +251,7 @@ Once the bin is marked as delivered, it becomes a permanant item in the sites' d
 
 ---
 
-**Impact**
+## Impact
 
 The system created a shared understanding of delivery instructions across all stakeholders.
 
