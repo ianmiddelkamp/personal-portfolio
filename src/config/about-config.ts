@@ -34,44 +34,19 @@ export let aboutConfig: AboutPageProps = {
             }
             ]
         },
-        {
-            title: "Calm at heart",
-            description: "When I'm not coding, I enjoy hiking, vacationing, reading and culinary experiences.",
-            images: [
-                {
-                    src: "/assets/nature-1.jpg",
-                    thumbSrc: "/assets/thumbs/nature-1.jpg",
-                    name: "nature-1.jpg",
-                    height: 234,
-                    width: 350
-                },
-                {
-                    src: "/assets/overlook.jpg",
-                    thumbSrc: "/assets/thumbs/overlook.jpg",
-                    name: "overlook.jpg",
-                    height: 234,
-                    width: 350
-                },
-                {
-                    src: "/assets/relax-1.jpg",
-                    thumbSrc: "/assets/thumbs/relax-1.jpg",
-                    name: "relax-1.jpg",
-                    height: 234,
-                    width: 350
-                },
-            /*     {
-                    src: "/assets/relax-2.jpg",
-                    thumbSrc: "/assets/thumbs/relax-2.jpg",
-                    name: "relax-2.jpg",
-                    height: 234,
-                    width: 350
-                } */
-            ]
-        },
+       
         {
             title: "A little known fact",
             description: "I enjoy cycling quite a bit, and besides regular rides ive done some longer multi-day tours. The pinnacle of my cycling journey has been that I cycled across Europe starting in the north of Italy, and ending in Amserterdam.",
             images: [
+                 {
+                    src: "/assets/mtn.jpg",
+                    thumbSrc: "/assets/thumbs/mtn.jpg",
+                    name: "trip-1.jpg",
+                    height: 234,
+                    width: 350
+
+                },
                 {
                     src: "/assets/trip-1.jpg",
                     thumbSrc: "/assets/thumbs/trip-1.jpg",
@@ -94,6 +69,40 @@ export let aboutConfig: AboutPageProps = {
                     height: 234,
                     width: 350
                 },
+            ]
+        },
+         {
+            title: "When it's time to relax",
+            description: "When I'm not coding, I enjoy reading, hiking, and sunny vacations.",
+            images: [
+                {
+                    src: "/assets/nature-1.jpg",
+                    thumbSrc: "/assets/thumbs/nature-1.jpg",
+                    name: "nature-1.jpg",
+                    height: 234,
+                    width: 350
+                },
+                {
+                    src: "/assets/overlook.jpg",
+                    thumbSrc: "/assets/thumbs/overlook.jpg",
+                    name: "overlook.jpg",
+                    height: 234,
+                    width: 350
+                },
+                {
+                    src: "/assets/relax-1.jpg",
+                    thumbSrc: "/assets/thumbs/relax-1.jpg",
+                    name: "relax-1.jpg",
+                    height: 234,
+                    width: 350
+                },
+                 {
+                    src: "/assets/cenote.jpg",
+                    thumbSrc: "/assets/thumbs/cenote.jpg",
+                    name: "relax-2.jpg",
+                    height: 234,
+                    width: 350
+                } 
             ]
         },
         {

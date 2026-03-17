@@ -19,6 +19,7 @@ At the start of each winter season, Monster Plowing coordinates a massive single
 - Locked gates or other blockers can prevent delivery.
 - All bins need to be picked up at the end of the season in another single-day effort.
 - All bin deliveries are part of rental agreements; unrecovered bins are a financial loss.
+<br />
 ---
 
 ## Problem
@@ -32,7 +33,7 @@ As the company continued to grow each season, managing the specific placement of
 - Requiring direct client intervention at the time of delivery was impossible under the single-day time constraint.
 - Client's specific location requests from previous season were forgotten/lossed.
 - Placement-focused ordering is a unique business requirement not represented in available software.
-
+<br />
 ---
 
 ## Constraints 
@@ -49,6 +50,7 @@ Additional requirements:
 - **Client changes** to placement or notes must be reviewed by office staff (clients cannot alter original data)
 - **Placement history** must be preserved across multiple seasons for recurring contracts
 - Some clients **own their own bins**; the system must track these separately, make them available for refill orders, but exclude them from pickup events
+<br />
 ---
 
 ## Solution
@@ -70,6 +72,7 @@ Key features:
   - Office users can review and approve requests
 - **Multi-season contracts**:
   - When creating deliveries for returning clients, office users can view last year’s bin locations and notes
+  <br />
 ---
 
 ## System Architecture
@@ -99,7 +102,7 @@ F --> C
 ```
 </div>
 
-## Delivery Workflow
+### Delivery Workflow
 
 
 <div class="zoomable-diagram" style="width:100%; overflow:hidden; border:1px solid #ddd;">
@@ -163,11 +166,11 @@ class PreSeason,MidSeason,EndSeason outline;
 ```
 </div>
 
-
+<br />
 ---
 
-## Office Order Tool
-### Order Creation:
+
+### Order Creation (Office Order Tool):
 - When a snow removal contract is signed, the quoted scope of work site map is integrated into the sytem. 
 - During signing finalization, office staff build the initial ice melter bin/bucket order included with the contract agreement. 
 - The order tool allows them to place each bin/bucket on a specific location on the existing site map. 
@@ -182,12 +185,11 @@ class PreSeason,MidSeason,EndSeason outline;
     </div>
 </div>
 
-
+<br />
 ---
 
-## Client Portal Order Tool
 
-### Order Review:
+### Order Review (Client Portal Order Tool):
 On the client portal order page, clients can: 
 
 - change the placement location of the pending order item
@@ -204,10 +206,7 @@ Any changes requested are saved to a copy of the order for office review.
         <small>client order tool: addresses names redacted</small>
     </div>
 </div>
-
----
-
-
+<br />
 ---
 
 ### Office Review
@@ -222,13 +221,10 @@ Office can accept/cancel pending changes.
     </div>
 </div>
 
-
+<br />
 ---
 
-
-## Mobile Service App
-
-### Delivery Day:
+### Delivery Day (Mobile Service App):
 
 Within the operator android application, user can
 
@@ -248,7 +244,7 @@ Once the bin is marked as delivered, it becomes a permanant item in the sites' d
 - requesting refills
 - requesting they be moved
 - requesting they be removed.
-
+<br />
 ---
 
 ## Impact

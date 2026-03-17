@@ -11,13 +11,13 @@ tech: [PHP, MySQL, Angular]
 > • Enabled staff to create dynamic customer communications  
 > • Reduced developer involvement in operational messaging  
 > • Standardized email templates across the organization  
-
+<br />
 ---
 
 ## Context
 
 Operations staff frequently needed to send customer notifications containing data from the operational system, such as billing information, invoice details or quote information. There was a high need for users to have the ability to build custom email templates without developer intervention.
-
+<br />
 ---
 
 ## Problem
@@ -28,17 +28,18 @@ The existing approach created several issues:
 - staff could not create or modify templates independently
 - developers became a bottleneck for operational communication
 - email content often required repeated code updates
-
+<br />
 **Example Use Case**
 
 The user wishes to select a list of quotes not yet signed by the client from a specific region and send a custom notification to all account owners for those quotes writing that their time to sign the quote is ending soon.
-
+<br />
 ----
 
 ## Constraints
 
 A key requirement was that every notification be sent as an individual email to a single recipient. This was so that pre-authorized links to the client dashboard could be generated for each recipient tied to their contact data in our system.
-
+<br />
+----
 ## Goals
 
 The new system needed to:
@@ -57,6 +58,7 @@ The new system needed to:
 - validate emails with the template engine on updates
 - restrict data loading to pre-defined functionality
 - templates could not access arbitrary database data
+<br />
 ---
 
 ## Solution
@@ -66,7 +68,6 @@ The new system needed to:
 - For example: one of these classes, ```AccountInvoiceNotification``` fulfilled an obligation to provide data about:
      - an Invoice
      - the billing entity it belonged to
-     - the account the entity belonged to
      - and the contact to whom the notification would be sent
 
 - The architecture separated: 
@@ -82,7 +83,8 @@ The new system needed to:
     - Adding or removing notifications from the outgoing list
     - Applying a rule based selection strategy to the outgoing list
     - Changing signature bodies
-    - Testing sending an notification
+    - Test sending an notification
+<br />
 ---
 
 ## Architecture
@@ -171,7 +173,8 @@ interface NotificationDataDescriptor
 ```
 <small>The interface any non-primitive data property should have </small>
 <br />
-This allowed new notification classes to be built into the system and have any data property which implemented the interface.
+<br />
+This allowed new notification classes to be built easily using existing data models as long as they implemented the ```NotificationDataDescriptor``` interface.
 <br />
 <blockquote class="border-l-4 border-neutral pl-4 italic">
     A single notification class could be used for multiple templates saved into the system. For example, the  ```AccountInvoiceNotification``` class described above could be used for an invoice creation notification, invoice edited notification, invoice coming due notification, and an invoice past due notification.
@@ -339,7 +342,7 @@ RC --> |No| SKIP
 </blockquote>
 <br />
 
-
+<br />
 ---
 
 
