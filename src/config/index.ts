@@ -98,7 +98,11 @@ export const SITE_CONTENT: SiteContent = {
           }, */
      ],
      about: {
-          description: `I'm Ian Middelkamp, a Senior Software Engineer based in Toronto, Canada. I specialize in full-stack development, databases, and production infrastructure. With over a decade of experience, I've built scalable systems, and delivered solutions that drive business growth.`,
+          description: `I'm Ian Middelkamp, a Senior Software Engineer based in Toronto. I specialize in full-stack development, databases, and system architecture.
+
+I began building internal software independently at a non-technical company, where I designed and implemented systems that transformed core business operations, from sales pipelines and service logistics to employee onboarding.
+
+Today, I focus on building scalable, maintainable systems that solve real operational problems.`,
           image: "/profile-big.jpg",
      },
      aboutPage:aboutConfig

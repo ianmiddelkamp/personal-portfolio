@@ -14,10 +14,9 @@ export let aboutConfig: AboutPageProps = {
     },
     sections: [
         {
-            title: "Farm Boy Turned Software Engineer",
-            description: `I'm originally a country boy, who grew up working on farms. For most of my youth and young adulthood I worked in the trades. I started in landscaping, then moved into irrigation systems, becoming a systems designer, and foreman. 
-            It wasn't until I started working at Monster Plowing Company that I got into software development. I realized that a lot of the problems the business
-            was having could be solved with custom software, so i decided to build it. My boss quickly realized the value of having an in-house software developer, and I was able to grow the software function within the award-winning company, making it into a full time position.`,
+            title: "Where I'm from",
+            description: `I'm originally a country boy, who grew up working on farms. For most of my youth and young adulthood I worked in the trades. I went to college for computer programming, and earned a BA from western. When working at Monster Property Services over the winter, I realized that a lot of the problems the business
+            was having could be solved with custom software, so i decided to build it. I carved out my own niche in the leadership of the company and became CTO. With a whole suite of software spanning multiple websites and android apps, the company was able to achieve so much more and it continues to grow.`,
             images: [{
                 src: "/assets/monster-1.jpg",
                 thumbSrc: "/assets/thumbs/monster-1.jpg",
