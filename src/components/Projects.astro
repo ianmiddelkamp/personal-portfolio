@@ -1,6 +1,5 @@
 ---
 import Section from "./Section.astro";
-import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 import CustomButton from "./CustomButton.astro";
 
@@ -12,14 +11,8 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Featured Projects">
-  <div>
-    <p class="mb-12 text-base text-neutral">
-       I have written three case studies on specific problems I encountered at Monster Property Services.
-    </p>
-    <CustomButton href="/case-studies" innerText="View Case Studies" />
-  </div>
   {
-    projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
+    projects.map(({ name, summary, image, wip, linkPreview, linkSources }, index) => {
       const top = 98 + index * 40;
       return (
         <div
@@ -28,34 +21,43 @@ const { projects } = Astro.props;
         >
           <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl  before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
             <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
+              <div class="mb-5 flex items-center gap-3">
+                <h3 class="font-serif text-3xl font-medium text-primary">
+                  {name}
+                </h3>
+                {wip && (
+                  <span class="rounded-full border border-yellow-500/40 bg-yellow-500/10 px-3 py-1 text-xs text-yellow-400">
+                    Work in Progress
+                  </span>
+                )}
+              </div>
               <p class="text-base text-neutral">{summary}</p>
               <div class="flex gap-5 pt-10 text-white">
-                <a
-                  href={linkSource}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(external.svg)] hover:underline"
-                >
-                  Source
-                </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(external.svg)] hover:underline"
-                >
-                  Preview
-                </a>
+                {linkSources?.map(({ label, href }) => (
+                  <a
+                    href={href}
+                    target="_blank"
+                    class="after:relative after:bottom-[-5px] after:content-[url(external.svg)] hover:underline"
+                  >
+                    {label}
+                  </a>
+                ))}
+                {linkPreview && (
+                  <a
+                    href={linkPreview}
+                    target="_blank"
+                    class="after:relative after:bottom-[-5px] after:content-[url(external.svg)] hover:underline"
+                  >
+                    Preview
+                  </a>
+                )}
               </div>
             </div>
-            <div class="flex items-end justify-end overflow-hidden">
-              <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
+            <div class="flex items-center justify-center overflow-hidden p-8">
+              <img
+                class="max-h-48 w-auto object-contain"
                 src={image}
                 alt={name}
-                width="736"
-                height="483"
               />
             </div>
           </div>
@@ -63,4 +65,10 @@ const { projects } = Astro.props;
       );
     })
   }
+  <div class="mt-4">
+    <p class="mb-12 text-base text-neutral">
+       I have written three case studies on specific problems I encountered at Monster Property Services.
+    </p>
+    <CustomButton href="/case-studies" innerText="View Case Studies" />
+  </div>
 </Section>

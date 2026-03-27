@@ -24,13 +24,19 @@ export interface AboutPageProps {
   mainImage: PreviewerImage;
   sections: AcountSection[]
 }
+export interface TechnologiesProps {
+  core: string[];
+  learning: string[];
+}
+
 export interface SiteContent {
   hero: HeroProps;
   experience: ExperienceProps[];
   introPageExperienceMin: number;
   projects: ProjectProps[];
   about: AboutProps;
-  aboutPage: AboutPageProps
+  aboutPage: AboutPageProps;
+  technologies: TechnologiesProps;
 }
 
 export interface HeroProps {
@@ -53,8 +59,9 @@ export interface ProjectProps {
   name: string;
   summary: string;
   image: string;
+  wip?: boolean;
   linkPreview?: string;
-  linkSource?: string;
+  linkSources?: { label: string; href: string }[];
 }
 
 export interface AboutProps {

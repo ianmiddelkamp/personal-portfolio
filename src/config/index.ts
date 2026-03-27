@@ -74,29 +74,36 @@ export const SITE_CONTENT: SiteContent = {
           },
      ],
      projects: [
-          /*
           {
-            name: "Spotifu Music",
-            summary: "A music streaming app that emulates Spotify's core features.",
-            linkPreview: "/",
-            linkSource: "https://github.com/immois/astro-zen",
-            image: "spotifu.png",
+               name: "Solo",
+               summary: "A full-stack freelance management app for independent contractors. Handles clients, projects, time tracking, task boards, invoicing, estimates, and AI-powered SOW parsing. Built with React 19, Ruby on Rails 8, and PostgreSQL.",
+               linkSources: [
+                    { label: "Frontend", href: "https://github.com/ianmiddelkamp/solo_frontend" },
+                    { label: "Backend", href: "https://github.com/ianmiddelkamp/solo_backend" },
+               ],
+               image: "/solo-logo.png",
+               wip: true,
           },
-          {
-            name: "Shopp App",
-            summary: "An e-commerce platform that replicates Shopify's key features.",
-            linkPreview: "/",
-            linkSource: "https://github.com/immois/astro-zen",
-            image: "shopify-clon.png",
-          },
-          {
-            name: "ClonTagram",
-            summary: "A social network that replicates the features of Instagram",
-            linkPreview: "/",
-            linkSource: "https://github.com/immois/astro-zen",
-            image: "clone-ig.png",
-          }, */
      ],
+     technologies: {
+          core: [
+               "PHP",
+               "MySQL",
+               "Angular",
+               "Node.js",
+               "Java",
+               "Android",
+               "iOS",
+               "REST APIs",
+               "Linux / Server Ops",
+          ],
+          learning: [
+               "React",
+               "Docker",
+               "PostgreSQL",
+               "Ruby on Rails",
+          ],
+     },
      about: {
           description: `I'm Ian Middelkamp, a Senior Software Engineer based in Toronto. I specialize in full-stack development, databases, and system architecture.
 
