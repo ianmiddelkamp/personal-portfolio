@@ -1,0 +1,32 @@
+---
+import Section from "./Section.astro";
+import type { TechnologiesProps } from "@types";
+
+type Props = TechnologiesProps;
+
+const { core, learning } = Astro.props;
+---
+
+<Section text="Technologies">
+  <div class="mb-10">
+    <h3 class="mb-4 font-serif text-xl font-semibold text-white">Core</h3>
+    <div class="flex flex-wrap gap-2">
+      {core.map((tech) => (
+        <span class="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-sm text-white/90">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <div>
+    <h3 class="mb-4 font-serif text-xl font-semibold text-white">Learning</h3>
+    <div class="flex flex-wrap gap-2">
+      {learning.map((tech) => (
+        <span class="rounded-full border border-neutral/30 bg-white/5 px-4 py-1.5 text-sm text-neutral">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</Section>
